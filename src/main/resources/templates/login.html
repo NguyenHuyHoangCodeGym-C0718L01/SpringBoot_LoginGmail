@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login page</title>
+</head>
+<body>
+<h2>Spring Boot Security Login with Google+</h2>
+<a href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8080/login-gmail&response_type=code
+    &client_id=353168946587-a1ciu40ajthugiseqrgerjqki02m9tla.apps.googleusercontent.com&approval_prompt=force">Login With Gmail</a>
+<br/>
+<form th:action="@{/login}" method="post">
+    <div>
+        <label>Account</label>
+        <input type="text" name="account">
+    </div>
+    <div>
+        <label>Password</label>
+        <input type="password" name="password">
+    </div>
+    <button type="submit">Login</button>
+    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+</form>
+<p>
+    <a href="/registration">Registration</a>
+</p><br>
+<p>
+    <a href="/forgetpassword">Forget password</a>
+</p>
+</body>
+</html>

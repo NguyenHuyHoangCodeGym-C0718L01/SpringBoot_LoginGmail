@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List Users</title>
+</head>
+<body>
+<h1>Users</h1>
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>View</th>
+    </tr>
+    <th:block th:each="user : ${users}">
+        <tr>
+            <td th:text="${user.account}"></td>
+            <td><a th:href="@{/view/__${user.id}__ }">View</a></td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>
